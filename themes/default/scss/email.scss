@@ -1,0 +1,198 @@
+@import "bulma-reduced/scss/utilities/all",
+        "bulma-reduced/scss/base/all",
+        "bulma-reduced/scss/elements/all",
+        'config/colours';
+
+html,
+body {
+    background-color: #ececec;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    @include until(600px) {
+        padding: 0 !important;
+    }
+}
+
+table.ancestor-table,
+table.super-ancestor-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.super-ancestor-table {
+    &-td {
+        border: 1px solid $white-ter !important;
+    }
+}
+
+table.ancestor-table td.main-container, table.super-ancestor-table td.main-container {
+  text-align: center;
+}
+
+table.alpha-center-table {
+    width: 600px;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    @include until(600px) {
+        width: 100% !important;
+        max-width: 600px !important;
+    }
+}
+table.alpha-center-table td {
+  border: none;
+}
+table.alpha-center-table td.content {
+    padding: 1em 1.5em 20px;
+    @include until(600px) {
+        padding: 1em 12px 20px !important;
+    }
+}
+
+table.alpha-center-table td.content ul {
+  padding-left: 0.5em;
+  margin-bottom: 2em !important;
+}
+table.alpha-center-table td.content ul li {
+  margin-bottom: 0.75em !important;
+  color: #66635F;
+}
+table.alpha-center-table td.content ul li strong {
+  color: #2a2a3b;
+}
+
+
+table {
+
+    td {
+        &.slogan {
+            padding: 1.5em 1em;
+            @include until(600px) {
+                padding: 6px 12px !important;
+            }
+
+            p {
+                font-style: italic;
+            }
+        }
+
+        &.content {
+            .original-copy {
+                font-size: 14px;
+            }
+
+            h2, h3, h4, h5, h6, p,li {
+                margin-bottom: 1.5rem;
+                a {
+                    color: $gold !important;
+                }
+            }
+
+            blockquote {
+                font-style: italic;
+                &.no-tilt {
+                    font-style: normal;
+                }
+            }
+
+            dl {
+                font-style: italic;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+                dd {
+                    font-size: 14px;
+                    margin-left: 0;
+                    margin-bottom: 0.75rem;
+                    line-height: 1;
+                    a {
+                        color: $gold !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.top-stripe {
+        .alpha-center-table {
+            tr {
+                td {
+                    padding: 12px;
+                    vertical-align: middle;
+                    &.col {
+                        &-left {
+                            width: 140px;
+                            background-color: $eeri-black;
+                            line-height: 0;
+                            font-size: 0;
+                            @include until(600px) {
+                                width: auto !important;
+                            }
+                        }
+
+                        &-right {
+                            font-size: 14px;
+                            text-align: right;
+                            background-color: $gold;
+                            @include until(600px) {
+                                font-size: 10px !important;
+                                text-align: center !important;
+                            }
+                        }
+                    }
+
+                    @include until(600px) {
+                        display: block !important;
+                    }
+                }
+
+                @include until(600px) {
+                    display: block !important;
+                }
+            }
+        }
+    }
+
+    &.closure {
+        tr {
+            td {
+                padding: 0 1.5em;
+                &.mid {
+                    border-left: 2px solid $gold;
+                    border-right: 2px solid $gold;
+                }
+                p {
+                    font-size: 12px;
+                    a {
+                        color: $gold !important;
+                    }
+                }
+
+                .ii a {
+                    color: $gold !important;
+                }
+
+                @include until(600px) {
+                    padding: 0 12px !important;
+                    display: block !important;
+                    border: none !important;
+                    margin-bottom: 1rem !important;
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+
+            @include until(600px) {
+                display: block !important;
+            }
+        }
+    }
+}
+
+.underlined {
+    text-decoration: underline;
+}

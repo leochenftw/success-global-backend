@@ -1,0 +1,371 @@
+fieldset {
+    border: none;
+}
+
+div.optionset,
+div.checkboxset {
+    ul.optionset {
+        li {
+            label {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+input.action {
+    @extend .button;
+}
+
+.container {
+    width: 100%;
+}
+
+.section {
+    background-color: transparent;
+}
+
+.is {
+    &-flex {
+        display: flex;
+        &.wrap {
+            flex-wrap: wrap;
+        }
+    }
+
+    &-block {
+        display: block;
+    }
+
+    &-half {
+        &-screen-height {
+            height: 50vh;
+        }
+
+        &-height {
+            height: 50%;
+        }
+    }
+
+    &-full {
+        &-screen-height {
+            height: 100vh;
+        }
+
+        &-height {
+            height: 100%;
+        }
+    }
+
+    &-lighter {
+        font-weight: lighter;
+    }
+
+    &-normal {
+        font-weight: normal;
+    }
+
+    &-bold {
+        font-weight: bold;
+    }
+
+    &-maxheight {
+        height: 100%;
+    }
+
+    &-absolute {
+        position: absolute;
+    }
+
+    &-relative {
+        position: relative;
+    }
+
+    &-uppercase {
+        text-transform: uppercase;
+    }
+
+    &-paddingless {
+        &-top {
+             padding-top: 0;
+        }
+
+        &-bottom {
+             padding-bottom: 0;
+        }
+
+        &-left {
+             padding-left: 0;
+        }
+
+        &-right {
+             padding-right: 0;
+        }
+
+        &-horizontal {
+             padding-left: 0;
+             padding-right: 0;
+        }
+
+        &-vertical {
+             padding-top: 0;
+             padding-bottom: 0;
+        }
+    }
+
+    &-marginless {
+        &-top {
+            margin-top: 0;
+        }
+
+        &-bottom {
+            margin-bottom: 0;
+        }
+
+        &-left {
+            margin-left: 0;
+        }
+
+        &-right {
+            margin-right: 0;
+        }
+
+        &-horizontal {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &-vertical {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &-fixed-layout {
+        width: 100%;
+        table-layout: fixed;
+    }
+}
+
+
+.icon {
+    width: auto;
+    height: auto;
+}
+
+.hide {
+    display: none !important;
+}
+
+.has-text-uppercase {
+    text-transform: uppercase;
+}
+
+.has-text-lowercase {
+    text-transform: lowercase;
+}
+
+.hover {
+    &-vertical {
+        &-middle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    &.is-bold {
+        font-weight: bold;
+    }
+}
+
+.hero {
+    &.is-transparent {
+        background-color: transparent;
+    }
+}
+
+.columns {
+    @include mobile {
+        &:not(.is-mobile) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.space {
+        &-between {
+            justify-content: space-between;
+        }
+
+        &-around {
+            justify-content: space-around;
+        }
+    }
+
+    &.align {
+        &-horizontal {
+            &-center {
+                justify-content: center;
+            }
+
+            &-right {
+                justify-content: flex-end;
+            }
+        }
+
+        &-vertical {
+            &-top {
+                align-items: flex-start;
+            }
+
+            &-center {
+                align-items: center;
+            }
+
+            &-bottom {
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .column {
+        &.is-auto-width {
+            width: auto;
+            flex: none;
+        }
+
+        @for $i from 1 through 12 {
+            &.order-#{$i} {
+                order: $i;
+            }
+        }
+
+        &.is {
+            &-twenty-percent {
+                flex: none;
+                display: block;
+                width: 20%;
+            }
+
+            &-at {
+                &-top {
+                    align-self: flex-start;
+                }
+
+                &-bottom {
+                    align-self: center;
+                }
+
+                &-bottom {
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+}
+
+div.field.textarea {
+    max-height: none;
+    max-width: none;
+    min-height: 0;
+    min-width: 0;
+    padding: inherit;
+    position: relative;
+    vertical-align: top;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    box-shadow: none;
+    font-size: inherit;
+    height: auto;
+    border-radius: 0;
+}
+
+
+.has-text-in {
+    @for $i from 2 through 12 {
+        &-#{$i}-columns {
+            column-count: #{$i};
+            column-gap: 2em;
+            @include mobile {
+                column-count: 1;
+                column-gap: 0;
+            }
+        }
+    }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+.button {
+    &.is-outlined {
+        background-color: transparent;
+    }
+
+    &.is-tiny {
+        font-size: 12px;
+        padding-top: 0.25em;
+        padding-bottom: 0.45em;
+        line-height: 1.2;
+        height: auto;
+    }
+}
+
+.tile {
+    &.is {
+        &-ancestor {
+            @include mobile {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+    }
+}
+
+// .section {
+//     .columns {
+//         @include mobile {
+//             margin-left: -0.75rem !important;
+//             margin-right: -0.75rem !important;
+//         }
+//     }
+// }
+
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    img {
+        border: none;
+    }
+}
+
+.navbar {
+    &-brand {
+        .navbar-item {
+            img {
+                max-height: none;
+            }
+        }
+    }
+
+    &-burger {
+        -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    }
+
+    &-menu {
+        @include until(1024px) {
+            padding: 0;
+        }
+    }
+}

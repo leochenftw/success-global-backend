@@ -1,0 +1,10 @@
+---
+Name: app
+Only:
+  environment: 'dev'
+---
+SSViewer:
+  source_file_comments: false
+Testimonial:
+  extensions:
+    - Versioned("Stage","Live")

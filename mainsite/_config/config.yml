@@ -1,0 +1,64 @@
+---
+Name: mainsite
+After: 'framework/*','cms/*'
+---
+# YAML configuration for SilverStripe
+# See http://doc.silverstripe.org/framework/en/topics/configuration
+# Caution: Indentation through two spaces, not tabs
+SiteVersion:
+  version: 1.0
+Email:
+  admin_email: 'Success Global <info@successglobal.nz>'
+  noreply_email: 'noreply <no-reply@successglobal.nz>'
+  developer_email: 'Leo Chen <leochenftw@gmail.com>'
+SSViewer:
+  theme: 'default'
+Page:
+  extensions:
+    - OpenGraphExtension
+    - TwitterCardExtension
+    - SeoObjectExtension
+    - SEOExtension
+SiteConfig:
+  extensions:
+    - CustomSiteConfig
+    - OpenGraphExtension
+    - TwitterCardExtension
+Page_Controller:
+  extensions:
+    - PageControllerDecorator
+ModelAdmin:
+  extensions:
+    - ModelAdminExtension
+i18n:
+  all_locales:
+    zh_Hans: Chinese (Simplified)
+  common_locales:
+    zh_Hans:
+      name: Chinese (Simplified)
+      native: 简体中文
+SeoConfig:
+    Page: true
+    ErrorPage: false
+    RedirectorPage: false
+    VirtualPage: false
+WWWSSL:
+  Enforced: false
+  IgnoreOrigins:
+    - 'localhost'
+    - 'sgl.leochen.co.nz'
+DataList:
+  extensions:
+    - DataListExt
+ArrayList:
+  extensions:
+    - DataListExt
+MenuSet:
+  default_sets:
+    - Main
+    - Footer
+GoogleAPIs:
+  Recaptcha: '6Lc8BlgUAAAAAKpN1HVRO9RHpj-lRizDfzfeJY2X'
+MenuItem:
+  extensions:
+    - MenuItemExtension

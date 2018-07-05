@@ -1,0 +1,22 @@
+---
+Name: 'e-cashier'
+---
+# Member:
+#   extensions:
+#     - StoredCreditcardExtension
+eCashier:
+  DefaultOrderClass: "ConsultationSlot"
+  MerchantSettings:
+    MerchantHomepageURL: "https://sgl.leochen.co.nz/!/#/"
+    SuccessURL: "/cart/checkout/success"
+    FailureURL: "/cart/checkout/fail"
+    CancellationURL: "/cart/checkout/cancel"
+    CardSavedURL: "/cart/checkout/saved"
+    PaymentScheduledURL: "/cart/checkout/pending"
+  GatewaySettings:
+    POLi:
+      CLIENTCODE: 'SS64008067'
+      AUTHCODE: 'tV4!vD8HkqM43'
+PoliPayment:
+  extensions:
+    - PaymentModelExtension

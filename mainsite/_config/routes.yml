@@ -1,0 +1,10 @@
+---
+Name: apiroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'signin': 'Signin'
+    'api/form/contact-us': 'ContactAPI'
+    'api/form/book-consultation': 'ConsultationAPI'
+    'api/booking/$ref!': 'BookingAPI'
